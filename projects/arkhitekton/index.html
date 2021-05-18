@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arkhitekton</title>
+
+ <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,html{
+  width: 100%;
+  height: auto;
+}
+  #overlay {
+  visibility:hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.8); 
+  z-index: 5; 
+  cursor: pointer;
+  color: white;
+}
+
+	  #message-form-close{
+    	color: red;
+    	position: absolute;
+    	right: 10px;
+    	top: 10px;
+    	cursor: pointer;
+    }
+
+    #message-form{
+    	position: fixed;
+    	visibility:hidden;
+    	width: 600px;
+    	height: 600px;
+    	background-color:#191919;
+    	z-index: 7;
+    	top: 15%;
+    	left: 30%;
+    }
+
+     #form{
+    	
+    }
+
+
+#btnMsg{
+position: fixed;
+right: 20px;
+bottom: 20px;
+z-index: 4;
+color: white;
+cursor: pointer;
+opacity: 0.4;
+
+}
+
+#btnMsg:hover{
+
+opacity: 1;
+}
+ .fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+   opacity: 0.4;
+
+  z-index: 4;
+}
+
+.fa:hover {
+    opacity: 1;
+    color: white;
+     background: #3B5998;
+    text-decoration: none;
+}
+
+.fa-facebook {
+  background: white;
+  color: ;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+   position: fixed;
+   bottom: 50%;
+   left: 20px;
+
+}
+
+#navbarSupportedContent{
+         position: absolute;
+          float: right;
+          right: 0;
+         font-weight: 600;
+}
+
+#navbarSupportedContent{
+         position: absolute;
+          float: right;
+          right: 0;
+         font-weight: 600;
+}
+
+#navbarSupportedContent ul li{
+ padding-right: 10px;
+}
+
+#navbarSupportedContent ul li a{
+    padding-right: 40px;
+    border: 1px solid black;
+    padding-left: 40px;
+}
+
+
+
+.container-1{
+    width: 100%;
+    height: 120vh;
+    background-image: url("cover3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color:white;
+
+}
+
+.logo{
+    padding-top: 100px;
+}
+.logo img{
+   width: 400px;
+   height: auto;
+}
+.header-quote{
+    font-family: Comic Sans MS;
+
+}
+.head-title{
+    font-size: 3vw;
+}
+
+.container-2{
+    width: 100%;
+    height: 100vh;
+     background-image: url("cover2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+
+}
+
+
+.project-title{
+    padding-top: 70px;
+}
+
+.img-slider{
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 100px;
+  background: #1D212B;
+
+}
+
+img{
+  width: 100px;
+  height: auto;
+}
+
+.img-slider .slide{
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  clip-path: circle(0% at 0 50%);
+}
+
+.img-slider .slide.active{
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+  transition-property: clip-path;
+}
+
+.img-slider .slide img{
+  z-index: 1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.img-slider .slide .info{
+  position: absolute;
+  top: 0;
+  padding: 15px 30px;
+  color: black;
+}
+
+.img-slider .slide .info h2{
+  color: #fff;
+  font-size: 45px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.img-slider .slide .info p{
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  width: 60%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.img-slider .navigation{
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  bottom:-10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img-slider .navigation .btn{
+  background: black;
+  width: 12px;
+  height: 12px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.img-slider .navigation .btn.active{
+  background: #2696E9;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.container-3{
+
+   width: 100%;
+  height: 80vh;
+  background-image: url("cover4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  color: white;
+  font-family: Courier New;
+}
+
+.container-3 .col-sm{
+  padding-top: 100px;
+
+}
+
+.col1{
+            width:300px;
+            height:300px;
+             background-image: url("me2.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+           border: 2px solid white;
+
+        }
+
+
+.col2{
+            width:300px;
+            height:300px;
+             background-image: url("me1.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+             border: 2px solid white;
+
+
+        }
+
+.col3{
+            width:300px;
+            height:300px;
+             background-image: url("me.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+          border: 2px solid white;
+
+
+        }
+
+.col-sm .content{
+  padding-top:3 0px;
+}
+
+
+
+.footer{
+	width: 100%;
+	height: 5vh;
+	background-color: #191919;
+	color: white;
+}
+
+.footer p{
+	padding-top: 10px; 
+}
+
+
+@media (max-width: 820px){
+  .img-slider{
+    width: 600px;
+    height: 375px;
+  }
+
+  .img-slider .slide .info{
+    padding: 10px 25px;
+  }
+
+  .img-slider .slide .info h2{
+    font-size: 35px;
+  }
+
+  .img-slider .slide .info p{
+    width: 70%;
+    font-size: 15px;
+  }
+
+  .img-slider .navigation{
+    bottom:0;
+  }
+
+  .img-slider .navigation .btn{
+    width: 10px;
+    height: 10px;
+    margin: 8px;
+  }
+
+  .container-3{
+  height: 130vh;
+}
+
+}
+
+@media (max-width: 620px){
+  .img-slider{
+    width: 400px;
+    height: 250px;
+  }
+
+  .img-slider .slide .info{
+    padding: 10px 20px;
+  }
+
+  .img-slider .slide .info h2{
+    font-size: 30px;
+  }
+
+  .img-slider .slide .info p{
+    width: 80%;
+    font-size: 13px;
+  }
+
+  .img-slider .navigation{
+    bottom: 15px;
+  }
+
+  .img-slider .navigation .btn{
+    width: 8px;
+    height: 8px;
+    margin: 6px;
+  }
+
+  .container-3{
+  height: 200vh;
+}
+}
+
+@media (max-width: 420px){
+
+ #message-form{
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100vh;
+    }
+
+     #form{
+    	padding:0;
+    	padding-top: 100px;
+    }
+  .img-slider{
+    width: 320px;
+    height: 200px;
+  }
+
+  .img-slider .slide .info{
+    padding: 5px 10px;
+  }
+
+  .img-slider .slide .info h2{
+    font-size: 25px;
+  }
+
+  .img-slider .slide .info p{
+    width: 90%;
+    font-size: 11px;
+  }
+
+  .img-slider .navigation{
+    bottom: 10px;
+  }
+
+
+
+.container-2{
+	height: 70vh;
+}
+
+}
+@media (max-width: 992px){
+#navbarSupportedContent{
+    position: relative;
+}
+
+#navbarSupportedContent ul li a{
+    
+    border:none;
+    padding-left: 0;
+}
+
+.container-3{
+  height: 130vh;
+}
+}
+
+@media (max-width: 768px){
+    #navbarSupportedContent{
+    position: relative;
+
+}
+#navbarSupportedContent ul li a{
+    
+    border:none;
+    padding-left: 0;
+}
+
+.img-box img{
+    margin: 0;
+    padding:0;
+    width: 350px;
+    height: auto;
+}
+
+.container-3{
+  height: 190vh;
+}
+}
+
+
+@media (max-width: 576px){
+
+#message-form{
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100vh;
+    }
+
+     #form{
+    	padding: 0;
+    	padding-top: 100px;
+    }
+.logo img{
+width: 300px;
+height: auto;
+}
+.head-title{
+ font-size: 4vw;
+
+}
+#navbarSupportedContent{
+    position: relative;
+}
+#navbarSupportedContent ul li a{
+    
+    border:none;
+    padding-left: 0;
+}
+.container-2{
+	height: 70vh;
+}
+
+.container-1{
+  height: 90vh;
+}
+
+.container-3{
+  height: 180vh;
+}
+    
+}
+</style>
+</head>
+<body>
+
+<div id="overlay"></div>
+<div id="message-form"><a  onclick="overlayclose()"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="message-form-close">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+</svg></a>
+
+<div class="">
+<form action="testimonial.php" method="post" id="form">
+<center>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdiDbNShsa8JyJ-j6GHEztr2uBA3Vag_75nOWDX2QRIZhPEmA/viewform?embedded=true" width="400" height="590" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</center>
+</div>
+
+
+</form>
+</div>
+
+<a href="https://www.facebook.com/QTLemonade.12" class="fa fa-facebook"></a>
+<a onclick="overlay()" id="btnMsg"><svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" fill="currentColor" class="bi bi-chat-right-text-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM3.5 3a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
+</svg></a>
+
+    <div class="container-1">
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ARKHITEKTON</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" id="home-btn">HOME<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="#projects">PROJECTS<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#con3">ABOUT<span class="sr-only">(current)</span></a>
+      </li>
+    
+    </ul>
+  
+  </div>
+</nav>
+</header>
+    <center>
+    
+    
+    <div class="logo">
+    <img src="logo.png">
+    </div>
+    
+    <div class="header-quote">
+    <h3 class="head-title">Imagination is your only limit</h3>
+    </div>
+    
+  </center>
+    </div>
+        
+    <div class="container-2" id="projects">
+
+     <div class="row justify-content-center">
+     <div class="row">
+     
+     <div class="col-sm">
+     <div class="img-slider">
+      <div class="slide active">
+        <img src="images/a.jpg" alt="">
+        <div class="info">
+         <h2> <font color ="black">Cartoon</font></h2>
+          <p>This tackles about the  issue between the salary standardazing law and teachers.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/b.jpg" alt="">
+        <div class="info">
+        	 <h2> <font color ="black">Cartoon</font></h2>
+          
+          <p>This is one of my favorite cartoons I made in highschool.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/c.jpg" alt="">
+        <div class="info">
+         <h2> <font color ="black">Cartoon</font></h2>
+          <p>Through my cartoons, I can inform anyone without reading a single word.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/d.jpg" alt="">
+        <div class="info">
+           <h2> <font color ="black">Cartoon</font></h2>
+          <p>Every stroke contains thousands of meanings.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/e.jpg" alt="">
+        <div class="info">
+         
+          <p> I'm not an open book so some people find it difficult how to read me and my emotions.</p>
+        </div>
+      </div>
+
+        <div class="slide">
+        <img src="images/f.jpg" alt="">
+        <div class="info">
+      
+          <p>The circular buildings symbolizes development not only with the projects we have but hopefully it would be a global firm.</p>
+        </div>
+      </div>
+
+ <div class="slide">
+        <img src="images/g.jpg" alt="">
+        <div class="info">
+           
+          <p>A school publication of Benedictine Institute of Learning established year 2018. </p>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        
+        
+      </div>
+    </div>
+
+     </div>
+    </div>
+    </div>
+	</div>
+
+<div class="container-3" id="con3">
+<div id="overlay1"></div>
+  <div class="row justify-content-center">
+
+      <div class="col-sm">
+        <center>
+          <div class="col1">
+
+             <p>ABOUT ME</p>
+
+              <div class="content">
+                <p>I'm Joshua Jader and I am an aspiring architech. Drawing is my hobby ever since i was a child. Through this, it became a 
+                foundation to a lot of relationships. I've been a campus-journalist for the past 8 years. This journey of my life will be unforgettable. </p>
+              </div>
+          </div>
+          </center>
+      </div>
+
+
+       <div class="col-sm">
+        <center>
+          <div class="col2">
+
+           <p>MY INSPIRATION</p>
+
+              <div class="content">
+                <p>When I was at my high school years, someone influenced me on designing or choosing what type of art I would like to master and they introduced the minimalist designs to me. As an active campus journalist and the cartoonist of the school at that time, there are times where the layout and designs are my responsibilities and I am having difficulties how much time it takes to edit or layouts a one project.</p>
+              </div>
+
+          </div>
+        </center>
+      </div>
+
+
+       <div class="col-sm">
+        <center>
+          <div class="col3">
+
+            <p>CONTACTS</p>
+
+              <div class="content">
+                <p>09665609796<br>jader2772@bene.edu.ph<br>Twitter|@lemon_senior<br>IG|@blueblackski<br>Facebook| Josh Jader</p>
+              </div>
+          </div>
+        </center>
+      </div>
+
+  </div>
+</div>
+
+<div class="footer">
+
+<center><p>© Arkhitekton | Joshua Jader | 09665609796 | <a href="#navbarSupportedContent">Top Page</a> </p></center>
+</div>
+
+ <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+
+    function overlay(){
+document.getElementById('message-form').style.visibility='visible';
+document.getElementById('overlay').style.visibility='visible';
+}
+
+function overlayclose(){
+	document.getElementById('message-form').style.visibility='hidden';
+document.getElementById('overlay').style.visibility='hidden';
+}
+
+    </script>
+
+</body>
+</html>

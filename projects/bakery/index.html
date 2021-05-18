@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RCB GRAPHIX</title>
+</head>
+<meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+   	
+   	@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+}
+#overlay {
+  visibility:visible;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.8); 
+  z-index: 5; 
+  cursor: pointer;
+  color: white;
+}
+#message-form-close{
+    	color: red;
+    	position: absolute;
+    	right: 10px;
+    	top: 10px;
+    	cursor: pointer;
+    }
+
+
+ #message-form{
+ 	visibility:visible;
+    	position: fixed;
+    	width: 600px;
+    	height: 300px;
+    	background-color:#191919;
+    	z-index: 7;
+    	top: 30%;
+    	left: 30%;
+
+    }
+
+  #form{
+  	padding-top: 20px;
+  	color: white;
+
+  }
+
+  #form div{
+  	padding: 10px;
+  }
+
+p{
+	margin-bottom: 15px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #a9a9a9;
+}
+
+h1.title{
+	margin-bottom: 20px;
+	color: #444444;
+	font-family: 'Allura', cursive;
+	text-transform: uppercase;
+	font-size: 38px;
+	word-spacing: 25px;
+	letter-spacing: 5px;
+}
+
+.btn a{
+	display: block;
+	width: 180px;
+	height: 35px;
+	border: 2px solid #fb2274;
+	line-height: 35px;
+	margin: 25px auto 0;
+	color: #fb2274;
+	text-align: center;
+}
+
+
+
+
+.main_container{
+	position: relative;
+}
+
+/* Navigation bar */
+.navbar{
+	width: 100%;
+	height: 65px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+}
+
+.logo a{
+	font-family: 'Allura', cursive;
+	font-size: 32px;
+	color: #fb2274;
+}
+
+.navbar .navbar_items ul{
+	display: flex;
+}
+
+
+.navbar .navbar_items ul li{
+	text-transform: uppercase;
+	margin: 0 10px;
+}
+
+.navbar .navbar_items ul li a{
+	color: #fff;
+}
+
+/* Banner Image */
+.banner_image{
+	background: url("cover.jpg") no-repeat top center;
+	background-size: cover;
+	width: 100%;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-attachment: fixed;
+}
+
+.banner_content{
+	text-align: center;
+	color: #fff;
+}
+
+.banner_content h1{
+	text-transform: uppercase;
+	line-height: 38px;
+	margin-bottom: 15px;
+}
+
+.banner_content h1 span{
+	color: #fb2274;
+}
+
+/* About us */
+.about,
+.services,
+.contactus,
+.ourteam{
+	padding: 5% 10%;
+	text-align: center;
+}
+
+/* Services */
+.services{
+	background: #f5f5f5;
+}
+
+.diff_services{
+	display: flex;
+	margin-top: 35px;
+	justify-content: space-between;
+}
+
+.diff_service_item{
+	width: 30%;
+}
+
+.diff_service_item img{
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+.diff_service_item h3{
+	color: #fb2274;
+	margin-bottom: 15px;
+}
+
+/* Contact Us */
+.form_input{
+	margin-bottom: 15px;
+}
+
+.form_input input[type="text"]{
+	width: 250px;
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+}
+
+.form_input textarea{
+	width: 250px;
+	padding: 12px 20px;
+	height: 80px;
+	resize: none;
+	border: 1px solid #ccc;
+}
+
+/* Our Team*/
+.ourteam{
+	background: #f5f5f5;
+}
+
+.ourteam_wrapper .team{
+	display: flex;
+	justify-content: space-between;
+}
+
+.ourteam_wrapper .team-1.team{
+	margin-bottom: 25px;
+}
+
+.ourteam_wrapper .team_member{
+	width: 30%;
+	height: auto;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.ourteam_wrapper .team_member img{
+	width: 100%;
+	display: block;
+	height: auto;
+	transition: all 0.5s ease;
+}
+
+.ourteam_wrapper .team_member:hover img{
+	transform: scale(1.1);
+}
+
+/* footer */
+.footer{
+	width: 100%;
+	text-align: center;
+	background: #444444;
+	padding: 20px 0;
+}
+
+.footer a{
+	color: #fff;
+}
+
+@media (max-width:992px){
+	#message-form{
+    	top: 25%;
+    	left: 10%;
+    	width: 80%;
+    	height: 60vh;
+    }
+
+     #form{
+    	padding: 0;
+    	padding-top: 50px;
+    }
+}
+
+@media (max-width: 720px){
+	.navbar{
+		height: auto;
+		flex-direction: column;
+	}
+
+	.navbar ul{
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.logo{
+		margin-bottom: 25px;
+	}
+
+	.navbar ul li{
+		margin-bottom: 5px;
+	}
+
+	.banner_content{
+		margin-top: 35px;
+	}
+
+	#message-form{
+    	top: 25%;
+    	left: 10%;
+    	width: 80%;
+    	height: 60vh;
+    }
+
+     #form{
+    	padding: 0;
+    	padding-top: 50px;
+    }
+}
+
+@media (max-width: 576px){
+	#message-form{
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 80vh;
+    }
+
+     #form{
+    	padding: 0;
+    	padding-top: 100px;
+    }
+}
+
+/* arrow */
+.arrow{
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	background: #fb2274;
+	border-radius: 50%;
+}
+
+.arrow img{
+	width: 20px;
+	height: 20px;
+	z-index: 1;
+}
+
+p{
+	color: black;
+}
+
+    </style>
+<body>
+
+<div id="overlay"></div>
+<div id="message-form"><a  onclick="overlayclose()"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="message-form-close">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+</svg></a>
+
+<div class="">
+<form action="testimonial.php" method="post" id="form">
+<center>
+<h1> Hello this is Kiara's Bakery, How may we help you?</h1>
+<div><a class="btn btn-success" href="#ourteam" onclick="overlayclose()">See Menu </a></div>
+<div><a class="btn btn-warning" href="#" onclick="overlayclose()">Just checking the site</a></div>
+</center>
+</div>
+</form>
+</div>
+</div>
+
+
+<div class="main_container" id="home">
+	<div class="navbar">
+		<div class="logo">
+			<a href="#">Kiara's E-Bakery</a>
+		</div>
+		<div class="navbar_items">
+			<ul>
+				<li><a href="#">home</a></li>
+				<li><a href="#about">about</a></li>
+				<li><a href="#services">services</a></li>
+				<li><a href="#contactus">contact</a></li>
+				<li><a href="#ourteam">Menu</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="banner_image">
+		<div class="banner_content">
+			<h1>Baking is anyone's way of therapy.<br/>
+				<span>I'm the THERAPIST. AND THE BAKER TOO.</span>
+			</h1>
+			<p><font color="white">Never miss the chance to satisfy your sweet tooth.</font></p>
+		</div>
+	</div>
+
+	<div class="about" id="about">
+		<h1 class="title"><font family="Arial">About Me</font></h1>
+		<p><font color="black">I'm Kiara Naomi Flores, Accountancy, Business and Management grade 12 student in Benedictine Institute of Learning. A consistent
+		honor student and an aspiring Certified Public Accountant, CPA. Baking is one of my personal hobbies. I can say that this is my comfort zone.
+	</font></p>
+			<div class="btn"><a href="https://sites.google.com/bene.edu.ph/kiara-naomi-flores/home">Learn more about me</a></div>
+	</div>
+
+	<div class="services" id="services">
+		<h1 class="title"><font family="Arial">Our Services</font></h1>
+		<p>Though our shop only exists online, we still offer different services you may look into.</p>
+
+		<div class="diff_services">
+			<div class="diff_service_item">
+				<img src="cookies.jpg">
+				<h3>Online</h3>
+				<p>Just always check our website to see what's available.</p>
+			</div>
+			<div class="diff_service_item">
+				<img src="cp.jpg">
+				<h3>Pre-ordering</h3>
+				<p>Simply give us a call or an e-mail to set made-to-order packages.</p>
+			</div>
+			<div class="diff_service_item">
+				<img src="cake.jpeg">
+				<h3>Cakes for Events!</h3>
+				<p>Wedding cake? Birthday cake? We got what cake you need.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="contactus" id="contactus">
+		<h1 class="title"><font family="Arial">Contact Us</font></h1>
+		<div class="form_wrapper">
+			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBq8PeyCGN172woFGkVsz8s5remqMPMK9-DOTQrCxKtBrStg/viewform?embedded=true" width="350" height="506" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+		</div>
+	</div>
+
+	<div class="ourteam" id="ourteam">
+		<h1 class="title"><font family="Arial">MENU</font></h1>
+		<div class="ourteam_wrapper">
+			<div class="team-1 team">
+				<div class="team_member">
+					<p>Cookies</p>
+					<img src="cookies.jpg" alt="Team_Image">
+
+				</div>
+				<div class="team_member">
+					<p>CheeseCake</p>
+					<img src="1.jpg" alt="Team_Image">
+				</div>
+				<div class="team_member">
+					<p>ChiffonCake</p>
+					<img src="3.jpg" alt="Team_Image">
+				</div>
+			</div>
+			<div class="team-2 team">
+				<div class="team_member">
+					<p>ButterNut</p>
+
+					<img src="4.jpg" alt="Team_Image">
+				</div>
+				<div class="team_member">
+					<p>Donuts</p>
+					<img src="5.jpg" alt="Team_Image">
+				</div>
+				<div class="team_member">
+					<p>Pretzels</p>
+					<img src="6.jpg" alt="Team_Image">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p><font color="white">©Kiara's E-Bakery  |  Kiara Naomi Flores  | 09380811153  |  fkiaranaomi@gmail.com </font></p>
+	</div>
+
+	<div class="arrow">
+		<a href="#home"><img src="https://i.imgur.com/wre6n0O.png" alt="up_arrow"></a>
+	</div>
+</div>
+
+<script>
+
+ function overlay(){
+document.getElementById('message-form').style.visibility='visible';
+document.getElementById('overlay').style.visibility='visible';
+}
+
+function overlayclose(){
+	document.getElementById('message-form').style.visibility='hidden';
+document.getElementById('overlay').style.visibility='hidden';
+}
+
+</script>
+</body>
+</html>

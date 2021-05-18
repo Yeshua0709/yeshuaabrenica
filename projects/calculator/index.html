@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Ko</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<form name="form" autocomplete="off">
+<div class="form-container">
+
+<div class="display-holder">
+    <input type="text" class="display-content" name="displayResult" placeholder="0" >
+    <input type="button" class="clear-btn" value="clear" name="clear" onClick="displayResult.value=''">
+</div>
+
+
+
+<div class="display-buttons">
+ 
+    <div class="row">
+        <input type="button" value="0" class="font" name="btn0" onClick="calcuNumbers(btn0.value)">
+        <input type="button" value="4" class="font" name="btn4" onClick="calcuNumbers(btn4.value)">
+        <input type="button" value="8" class="font" name="btn8" onClick="calcuNumbers(btn8.value)">
+    </div>
+
+    <div class="row">
+        <input type="button" value="1" class="font" name="btn1" onClick="calcuNumbers(btn1.value)">
+        <input type="button" value="5" class="font" name="btn5" onClick="calcuNumbers(btn5.value)">
+        <input type="button" value="9" class="font" name="btn9" onClick="calcuNumbers(btn9.value)">
+    </div>
+
+    <div class="row">
+        <input type="button" value="2" class="font" name="btn2" onclick="calcuNumbers(btn2.value)">
+        <input type="button" value="6" class="font" name="btn6" onClick="calcuNumbers(btn6.value)">
+        <input type="button" value="+" class="font" name="add" onClick="calcuNumbers(add.value)">
+    </div>
+
+    <div class="row">
+        <input type="button" value="3" class="font" name="btn3" onClick="calcuNumbers(btn3.value)">
+        <input type="button" value="7" class="font" name="btn7" onClick="calcuNumbers(btn7.value)">
+        <input type="button" value="-" class="font" name="minus" onClick="calcuNumbers(minus.value)">
+    </div>
+
+    <div class="row">
+        <input type="button" value="*" class="font"  name="multi" onClick="calcuNumbers(multi.value)">
+        <input type="button" value="/" class="font" name="divi" onClick="calcuNumbers(divi.value)">
+        <input type="button" value='=' class="font" name="equals" onClick='displayResult.value=eval(displayResult.value)'>
+    </div>
+
+</div>
+</div>
+</form>
+<script>
+const calcuNumbers = ( result ) => {
+
+form.displayResult.value = form.displayResult.value + result;
+    console.log(result);
+    }
+</script>
+
+</body>
+</html>

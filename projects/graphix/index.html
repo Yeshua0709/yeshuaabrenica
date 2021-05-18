@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+   	
+   	@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+#about{
+	background-color: #191919;
+
+}
+#logo{
+	color: #07dcf4;
+	font-family: Arial black;
+
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+
+}
+#overlay {
+  visibility:hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.8); 
+  z-index: 5; 
+  cursor: pointer;
+  color: white;
+}
+#message-form-close{
+    	color:#07dcf4;
+    	position: absolute;
+    	right: 10px;
+    	top: 10px;
+    	cursor: pointer;
+    }
+
+
+ #message-form{
+ 		visibility:hidden;
+    	position: fixed;
+    	width: 600px;
+    	height: 300px;
+    	background-color:#191919;
+    	z-index: 7;
+    	top: 30%;
+    	left: 30%;
+
+    }
+
+  #form{
+  	padding-top: 20px;
+  	color: white;
+
+  }
+
+  #form div{
+  	padding: 10px;
+  }
+
+p{
+	margin-bottom: 15px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #a9a9a9;
+}
+
+h1.title{
+	margin-bottom: 20px;
+	color: #444444;
+	font-family:Courier New;
+	text-transform: uppercase;
+	font-size: 38px;
+	word-spacing: 5px;
+	letter-spacing: 5px;
+	font-weight: 900;
+}
+
+.btn a{
+	display: block;
+	width: 180px;
+	height: 35px;
+	border: 2px solid #07dcf4;
+	line-height: 35px;
+	margin: 25px auto 0;
+	color: #07dcf4;
+	text-align: center;
+}
+
+
+
+
+.main_container{
+	position: relative;
+}
+
+/* Navigation bar */
+.navbar{
+	width: 100%;
+	height: 65px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+}
+
+.logo a{
+	font-family: sans-serif;
+	font-size: 32px;
+	color: #fb2274;
+}
+
+.navbar .navbar_items ul{
+	display: flex;
+}
+
+
+.navbar .navbar_items ul li{
+	text-transform: uppercase;
+	margin: 0 10px;
+}
+
+.navbar .navbar_items ul li a{
+	color: white;
+	font-family:Comic Sans MS, Comic Sans, cursive;
+}
+
+/* Banner Image */
+.banner_image{
+	background: url("cover.jpg") 
+	no-repeat top center;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-attachment: fixed;
+}
+
+.banner_content{
+	text-align: center;
+	color: #fff;
+	padding: 10px;
+	border: 2px solid white;
+}
+
+.banner_content h1{
+	text-transform: uppercase;
+	line-height: 38px;
+	margin-bottom: 15px;
+}
+
+.banner_content h1 span{
+	color: #07dcf4;
+}
+
+/* About us */
+.about,
+.services,
+.contactus,
+.ourteam{
+	padding: 5% 10%;
+	text-align: center;
+}
+
+/* Services */
+.services{
+	
+}
+
+.diff_services{
+	display: flex;
+	margin-top: 35px;
+	justify-content: space-between;
+}
+
+.diff_service_item{
+	width: 30%;
+}
+
+.diff_service_item img{
+	width: 100%;
+	margin-bottom: 25px;
+}
+
+.diff_service_item h3{
+	color: #fb2274;
+	margin-bottom: 15px;
+}
+
+/* Contact Us */
+#contactus{
+	background-color: #191919;
+	margin: 0;
+}
+
+#contactus iframe{
+
+	padding: 0;
+	margin: 0;
+
+
+}
+.form_input{
+	margin: 0;
+
+}
+
+.form_input input[type="text"]{
+	width: 250px;
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+}
+
+.form_input textarea{
+	width: 250px;
+	padding: 12px 20px;
+	height: 80px;
+	resize: none;
+	border: 1px solid #ccc;
+}
+
+/* Our Team*/
+.ourteam{
+	background-image: url("cover2.jpg");
+	background-attachment: fixed;
+	color: white;
+}
+
+.ourteam_wrapper .team{
+	display: flex;
+	
+	justify-content: space-between;
+
+
+}
+
+.team_member p{
+	color: white;
+}
+.ourteam_wrapper .team-1.team{
+	margin-bottom: 25px;
+}
+
+.ourteam_wrapper .team_member{
+	width: 30%;
+	height: auto;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.ourteam_wrapper .team_member img{
+	width: 100%;
+	display: block;
+	height: auto;
+	transition: all 0.5s ease;
+}
+
+.ourteam_wrapper .team_member:hover img{
+	transform: scale(1.1);
+}
+
+/* footer */
+.footer{
+	width: 100%;
+	text-align: center;
+	background: #444444;
+	padding: 20px 0;
+}
+
+.footer a{
+	color: #fff;
+}
+
+@media (max-width:992px){
+	#message-form{
+    	top: 25%;
+    	left: 10%;
+    	width: 80%;
+    	height: 60vh;
+    }
+
+     #form{
+    	padding: 0;
+    	padding-top: 50px;
+    }
+}
+
+@media (max-width: 720px){
+	.navbar{
+		height: auto;
+		flex-direction: column;
+	}
+
+	.navbar ul{
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.logo{
+		margin-bottom: 25px;
+	}
+
+	.navbar ul li{
+		margin-bottom: 5px;
+	}
+
+	.banner_content{
+		margin-top: 35px;
+	}
+
+	#message-form{
+    	top: 25%;
+    	left: 10%;
+    	width: 80%;
+    	height: 60vh;
+    }
+
+     #form{
+    	padding: 0;
+    	padding-top: 50px;
+    }
+}
+
+@media (max-width: 576px){
+	#message-form{
+    	top: 10;
+    	left: 0;
+    	width: 100%;
+    	height: 60vh;
+    }
+
+     #form{
+    	padding: 0;
+    	padding-top: 100px;
+    }
+}
+
+/* arrow */
+.arrow{
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	background: #07dcf4;
+	border-radius: 50%;
+}
+
+.arrow img{
+	width: 20px;
+	height: 20px;
+	z-index: 1;
+}
+
+p{
+	color: black;
+}
+
+    </style>
+<body>
+
+
+<div id="overlay"></div>
+<div id="message-form"><a  onclick="overlayclose()"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="message-form-close">
+  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+</svg></a>
+
+<div class="">
+<form action="testimonial.php" method="post" id="form">
+<center>
+<h3>Do you want to set a commission project?</h3>
+<div><a class="btn btn-info" href="#contactus" onclick="overlayclose()">Yes, please.</a></div>
+<div><a class="btn btn-danger" onclick="overlayclose()">Not yet, still browsing.</a></div>
+</center>
+</div>
+</form>
+</div>
+</div>
+
+
+<div class="main_container" id="home">
+	<div class="navbar">
+		<div class="logo">
+			<a href="#" id="logo">RCB GRAPHIX</a>
+		</div>
+		<div class="navbar_items">
+			<ul>
+				<li><a href="#">home</a></li>
+				<li><a href="#about">about</a></li>
+				
+				<li><a href="#ourteam">Services</a></li>
+				<li><a href="#contactus">contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="banner_image">
+		<div class="banner_content">
+			<h1>A mint of creativity.<br/>
+				<span>Let your design speak for yourself</span>
+			</h1>
+			<p><font color="white">Think   | <font color="#07dcf4">   Conceptualize   </font> |    Make it real</font></p>
+		</div>
+	</div>
+
+	<div class="about" id="about">
+		<h1 class="title"><font color="#07dcf4">About Us</font></h1>
+		<p><font color="white">RCB Graphics is a sole proprietorship business that offers digital paintings and graphics. This business started last October 2020, with it still being new to the field we can assure our customers to make their ideas and goals into their desired design concept. Our aim is to provide best services for our customers and to exceed their expectations.
+	</font></p>
+			<div class="btn"><a href="https://sites.google.com/bene.edu.ph/rcb-graphix/home">Wanna know us more?</a></div>
+	</div>
+
+
+	<div class="ourteam" id="ourteam">
+		<h1 class="title"><font family="Arial" color="#07dcf4">Services</font></h1>
+		<div class="ourteam_wrapper">
+			<div class="team-1 team">
+				<div class="team_member">
+					<p>Digi-Painting</p>
+					<img src="s1.jpg" alt="Team_Image">
+
+				</div>
+				<div class="team_member">
+					<p>Logo</p>
+					<img src="s2.jpg" alt="Team_Image">
+				</div>
+				<div class="team_member">
+					<p>Sticker</p>
+					<img src="s3.jpg" alt="Team_Image">
+				</div>
+			</div>
+			<div class="team-2 team">
+				<div class="team_member">
+					<p>Invitation</p>
+
+					<img src="s4.jpg" alt="Team_Image">
+				</div>
+				<div class="team_member">
+					<p>Certificate</p>
+					<img src="s5.jpg" alt="Team_Image">
+				</div>
+				<div class="team_member">
+					<p>Presentations</p>
+					<img src="s6.jpg" alt="Team_Image">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="contactus" id="contactus">
+		<h1 class="title"><font family="Arial" color="#07dcf4">Contact Us</font></h1>
+		<div class="form_wrapper">
+		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScwho2GvIEgjSB2HRA3FqDMEWWp1UFpB3hVeMxA1hGnJZ1Ydw/viewform?embedded=true" width="300" height="500" frameborder="0" marginheight="0" marginwidth="0" >Loading…</iframe>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p><font color="white"> ©RCB Graphix | <a href="https://mail.google.com/mail/u/1/#inbox">graphixrcb@gmail.com</a> | YouTube: <a href="https://www.youtube.com/channel/UCWEvSZxEjG_LAdq8S5ORfjA?view_as=subscriber">RCB Graphix </a>| 
+			Facebook: <a href="https://www.facebook.com/RCB-Graphix-106507547964646">RCB Graphix</a></font></p>
+	</div>
+
+	<div class="arrow">
+		<a href="#home"><img src="https://i.imgur.com/wre6n0O.png" alt="up_arrow"></a>
+	</div>
+</div>
+
+<script type="text/javascript">
+window.onscroll = function(ev) {
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+        document.getElementById('message-form').style.visibility='visible';
+ 		document.getElementById('overlay').style.visibility='visible';
+    }
+};
+
+ 
+function overlayclose(){
+  document.getElementById('message-form').style.visibility='hidden';
+document.getElementById('overlay').style.visibility='hidden';
+}
+
+</script>
+
+</body>
+</html>
