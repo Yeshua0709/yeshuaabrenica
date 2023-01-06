@@ -344,21 +344,21 @@ font-size: 1.25rem;
 }
 
 .skillset-level{
-    width: 70%;
+    width: 90%;
     background-color: #daa949;
     color: #100f2e;
     border-radius: 8px;
 }
 
 .css{
-    width: 80%;
+    width: 90%;
 }
 
 .js{
-    width:50%;
+    width:70%;
 }
 .react{
-    width: 30%;
+    width: 70%;
 }
 
 .php {
