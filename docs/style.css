@@ -476,7 +476,7 @@ font-family: 'Courier New', Courier, monospace;
 
 .projects-text-info p{
     font-family: 'Roboto', sans-serif;
-   
+    line-height:2em;
 }
 @media(max-width:900px){
     .section-title-holder:after{
